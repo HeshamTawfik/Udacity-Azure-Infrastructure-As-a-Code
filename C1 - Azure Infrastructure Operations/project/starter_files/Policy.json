@@ -1,0 +1,18 @@
+{
+    "type": "Microsoft.Authorization/policyDefinitions",
+    "name": "tagging-policy",
+    "properties": {
+      "mode": "indexed",
+      "displayName": "Tagging Policy",
+      "description": "This policy deny the Creation of the untagged resources",
+      "policyRule": {
+        "if": {
+            "field": "tags",
+            "exists": "false"
+          },
+        "then":{
+           "effect": "deny"     
+        }  
+      }     
+    }
+}
